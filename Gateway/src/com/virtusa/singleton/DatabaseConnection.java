@@ -1,11 +1,12 @@
 package com.virtusa.singleton;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import com.virtusa.constants.DBConstants;  
 
 public class DatabaseConnection {
 	public  Connection con = null;
-	private static DatabaseConnection db = null;
+	public static  DatabaseConnection db = null;
 	private DatabaseConnection(){		
 		try{  			
 			Class.forName(DBConstants.DRIVER_NAME);  //load the driver class  
