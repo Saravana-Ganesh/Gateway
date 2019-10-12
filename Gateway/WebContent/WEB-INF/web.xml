@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Gateway</display-name>
+  
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>login.html</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>HelloWorldServlet</servlet-name>
     <servlet-class>com.virtusa.GetUserServlet</servlet-class>
@@ -26,6 +24,7 @@
     <url-pattern>/secondServlet</url-pattern>
   </servlet-mapping>
   
+  <!-- For Signup operation -->
   <servlet>
     <servlet-name>Signup</servlet-name>
     <servlet-class>com.virtusa.ui.SignupUi</servlet-class>
@@ -34,5 +33,16 @@
     <servlet-name>Signup</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+  
+  <!-- For login operation -->
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>com.virtusa.ui.LoginUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>

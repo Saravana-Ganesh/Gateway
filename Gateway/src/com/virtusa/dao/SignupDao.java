@@ -11,6 +11,10 @@ import com.virtusa.singleton.DatabaseConnection;
 
 public class SignupDao {
 	public void addNewUser(SignupBo signupBo) throws SQLException {
+		/*
+		 * author Saravana Ganesh
+		 * created on 11-oct-2019
+		 */
 		DatabaseConnection db = null;
 		int count=0;
 		try {

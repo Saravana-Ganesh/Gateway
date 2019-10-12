@@ -7,7 +7,11 @@ import com.virtusa.constants.DBConstants;
 public class DatabaseConnection {
 	public  Connection con = null;
 	public static  DatabaseConnection db = null;
-	private DatabaseConnection(){		
+	private DatabaseConnection(){	
+		/*
+		 * author Saravana Ganesh
+		 * created on 10-oct-2019
+		 */
 		try{  			
 			Class.forName(DBConstants.DRIVER_NAME);  //load the driver class  
 			//create  the connection object  
