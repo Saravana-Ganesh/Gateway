@@ -23,8 +23,14 @@ public class LoginUi extends HttpServlet {
 			loginBo.setPassword(password);
 			if(loginService.checkUserLogin(loginBo)) {
 				 HttpSession session=request.getSession();  
-			     session.setAttribute("email",email);  
-			     response.sendRedirect("JSP/Welcome.jsp");
+			     session.setAttribute("email",email); 
+			     //Setting response
+			     response.setContentType("text/plain");
+			     response.setCharacterEncoding("UTF-8"); 
+			     response.getWriter().write("1");    		
+			}else {
+				//Setting response
+				response.getWriter().write("0");
 			}
 		}else {
 			throw new NullPointerException("Null or Empty String");

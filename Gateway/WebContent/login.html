@@ -21,16 +21,17 @@
 				<h4 class="modal-title">Member Login</h4>
 			</div>
 			<div class="modal-body">
-				<form action="login" method="post">
+				<form id="login_page">
 					<div class="form-group">
 						<i class="fa fa-user"></i>
 						<input type="text" class="form-control" placeholder="Email" required="required"
-						name="email">
+						name="email" id="email">
 					</div>
+					<div id="validation"></div>
 					<div class="form-group">
 						<i class="fa fa-lock"></i>
 						<input type="password" class="form-control" placeholder="Password" required="required"
-						name="password">					
+						name="password" id="password">					
 					</div>
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
@@ -45,4 +46,5 @@
 	</div>
 </div>     
 </body>
+<script src="JavaScript/login.js"></script>
 </html>                            

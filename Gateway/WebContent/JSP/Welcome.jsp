@@ -7,8 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+<%try{
 	if(session.getAttribute("email")==null){
+		response.sendRedirect("../login.html");
+	}else{
+		System.out.println(session.getAttribute("email"));
+	}
+	}catch(Exception e){
+		e.printStackTrace();
 		response.sendRedirect("../login.html");
 	}
 %>
