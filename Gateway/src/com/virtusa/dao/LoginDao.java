@@ -9,12 +9,13 @@ import com.virtusa.constants.TableConstants;
 import com.virtusa.singleton.DatabaseConnection;
 
 public class LoginDao {
-	public void validateUser(LoginBo loginBo) throws SQLException {
+	public boolean validateUser(LoginBo loginBo) throws SQLException {
 		/*
 		 * author Saravana Ganesh
 		 * created on 12-oct-2019
 		 */
 		DatabaseConnection db = null;
+		boolean userVerified = false;
 		try {
 			db = DatabaseConnection.getDbConnection();
 			StringBuilder query = new StringBuilder();
@@ -28,6 +29,7 @@ public class LoginDao {
 			ResultSet rs = preparedStatement.executeQuery();
 			if(rs.next()) {
 				System.out.println("valid user");
+				userVerified= true;
 			}
 			else {
 				System.out.println("Invalid user");
@@ -38,5 +40,6 @@ public class LoginDao {
 			db.con.close();
 			DatabaseConnection.db=null;
 		}
+		return userVerified;
 	}
 }

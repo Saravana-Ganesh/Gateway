@@ -1,24 +1,31 @@
 package com.virtusa.ui;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.virtusa.bo.LoginBo;
 import com.virtusa.service.LoginService;
 import com.virtusa.utils.StringUtils;
 
 public class LoginUi extends HttpServlet {
-	public void doPost(HttpServletRequest request,HttpServletResponse response) {
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		LoginBo loginBo = new LoginBo();
 		LoginService loginService = new LoginService();
-		String name,password;
-		name = request.getParameter("email");
+		String email,password;
+		email = request.getParameter("email");
 		password = request.getParameter("password");
-		if(!StringUtils.isNullOrEmpty(name)&&!StringUtils.isNullOrEmpty(password)) {
-			loginBo.setEmail(name);
+		if(!StringUtils.isNullOrEmpty(email)&&!StringUtils.isNullOrEmpty(password)) {
+			loginBo.setEmail(email);
 			loginBo.setPassword(password);
-			loginService.checkUserLogin(loginBo);
+			if(loginService.checkUserLogin(loginBo)) {
+				 HttpSession session=request.getSession();  
+			     session.setAttribute("email",email);  
+			     response.sendRedirect("JSP/Welcome.jsp");
+			}
 		}else {
 			throw new NullPointerException("Null or Empty String");
 		}
