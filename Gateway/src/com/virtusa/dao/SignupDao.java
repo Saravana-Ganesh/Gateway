@@ -10,12 +10,13 @@ import com.virtusa.constants.TableConstants;
 import com.virtusa.singleton.DatabaseConnection;
 
 public class SignupDao {
-	public void addNewUser(SignupBo signupBo) throws SQLException {
+	public boolean addNewUser(SignupBo signupBo) throws SQLException {
 		/*
 		 * author Saravana Ganesh
 		 * created on 11-oct-2019
 		 */
 		DatabaseConnection db = null;
+		boolean addUser = false;
 		int count=0;
 		try {
 			db = DatabaseConnection.getDbConnection();
@@ -33,17 +34,18 @@ public class SignupDao {
 			if(count!=0) {
 				CallableStatement callableStatement = db.con.prepareCall ("begin "+PlSqlConstants.IDENTITY_INSERT_USER_PROFILE+";end;");
 				callableStatement.execute ();
+				addUser = true;
 			}
 			System.out.println("Number of rows affected--->"+count);
-		}catch(Exception e)
-		{
+		}catch(SQLException e) {
+			 addUser = false;
+		}catch(Exception e) {
 			e.printStackTrace();
-		}finally
-		{
+		}finally {
 			db.con.close();
 			DatabaseConnection.db=null;
 		}
-
+		return addUser;
 	}
 
 }

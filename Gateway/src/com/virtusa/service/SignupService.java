@@ -6,17 +6,19 @@ import com.virtusa.bo.SignupBo;
 import com.virtusa.dao.SignupDao;
 
 public class SignupService {
-	public void addNewUser(SignupBo signupBo) {
+	public boolean addNewUser(SignupBo signupBo) {
 		/*
 		 * author Saravana Ganesh
 		 * created on 11-oct-2019
 		 */
 		SignupDao signupDao = new SignupDao();
+		boolean addUser = false;
 		try {
-			signupDao.addNewUser(signupBo);
+			addUser = signupDao.addNewUser(signupBo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return addUser;
 	}
 
 }

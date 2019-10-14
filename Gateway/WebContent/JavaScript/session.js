@@ -3,7 +3,6 @@
  * Created on 14-10-2019
  */
 window.onload=function(){
-	debugger;
 	$.ajax({
 		      url:'../login',
 		      data:{

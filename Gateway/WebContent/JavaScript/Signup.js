@@ -1,6 +1,7 @@
 $(document).ready(function()
 	{ 
 	$('#submit').click(function(e){
+		e.preventDefault();
 		var error = false;
 		var username = $('#username').val();
 		var email = $('#email').val();
@@ -36,7 +37,7 @@ $(document).ready(function()
 		
 		//Validating password.
 		if(p1.length==0 || p2.length==0){
-			$('#p20').text("Password is empty");//This displays password are not matched.
+			$('#confirm_password').text("Password is empty");//This displays password are not matched.
 			$("#psw1").focus();
 			$("#psw2").focus();
 			error = true;
@@ -61,26 +62,32 @@ $(document).ready(function()
 		if(error){
 			return false;
 		}
-		var data = {
+		  $.ajax({
+		      url:'../signup',
+		      data :{
 					email:email,
 					password:p1,
-					methodName:"signup",
-					username:username,
+					userName:username,
 					phoneNumber:phoneNumber,
-					birthday:birthday,
-					gender:gender
-					};
-		$.ajax({
-			type:"POST",
-			url:  '../sayhello',
-			data: (jQuery.param(data)),
-			//dataType: 'json',
-			success: function(response) {
-				drawprofile(email);
-			},error: function(){
-				alert("EmailId already exists");
-			}
-		});
-		return false;
+				},
+		      type:'post',
+		      async:false,
+		      success: function (data) {
+		          callbackfn(data)
+		      },
+		      error: function (textStatus, errorThrown) {
+		          callbackfn("Error getting the data")
+		      }
+
+		   });
+		  function callbackfn(data)
+		  {
+		     if(data=="1"){
+		    	 window.location = '../JSP/Welcome.jsp';
+		     }else{
+		    	 $("#errorPhoneNumber").text("User Already Exists");
+		     }  
+		  }
+	
 	});	
 });

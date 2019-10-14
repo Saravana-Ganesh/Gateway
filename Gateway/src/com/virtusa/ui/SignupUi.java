@@ -1,15 +1,18 @@
 package com.virtusa.ui;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.virtusa.bo.SignupBo;
 import com.virtusa.service.SignupService;
 import com.virtusa.utils.StringUtils;
 
 public class SignupUi extends HttpServlet {
-	public void doPost(HttpServletRequest request,HttpServletResponse response) {
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		/*
 		 * author Saravana Ganesh
 		 * created on 12-oct-2019
@@ -29,7 +32,18 @@ public class SignupUi extends HttpServlet {
 			signupBo.setEmail(email);
 			signupBo.setPassword(password);
 			signupBo.setPhoneNumber(phoneNumber);
-			service.addNewUser(signupBo);
+			if(service.addNewUser(signupBo)) {
+				//Successfully created new user
+				 HttpSession session=request.getSession();
+				 session.setAttribute("email",email); //Set session
+			     response.setContentType("text/plain");
+			     response.setCharacterEncoding("UTF-8"); 
+			     response.getWriter().write("1");   
+			}else {//User Already Exists
+				 response.setContentType("text/plain");
+			     response.setCharacterEncoding("UTF-8"); 
+			     response.getWriter().write("0");   
+			}
 		}else {
 			throw new NullPointerException("Null or Empty String");
 		}
