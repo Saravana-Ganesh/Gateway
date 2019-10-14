@@ -4,21 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../JavaScript/session.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-<%try{
-	if(session.getAttribute("email")==null){
-		response.sendRedirect("../login.html");
-	}else{
-		System.out.println(session.getAttribute("email"));
-	}
-	}catch(Exception e){
-		e.printStackTrace();
-		response.sendRedirect("../login.html");
-	}
-%>
-
  <h1>Welcome ${email}</h1>
 </body>
 </html>
