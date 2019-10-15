@@ -71,5 +71,9 @@
 		</div>
 	</nav>
 </body>
+<<<<<<< HEAD
  <script src="../JavaScript/welcome.js"></script>
 </html>                                                        
+=======
+</html>                                                        
+>>>>>>> 61d296626254adb103c4889a5a6c37bc3a38d20e
