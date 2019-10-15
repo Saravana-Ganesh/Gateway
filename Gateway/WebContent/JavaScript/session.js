@@ -3,6 +3,7 @@
  * Created on 14-10-2019
  */
 window.onload=function(){
+	window.sessionStorage;
 	$.ajax({
 		      url:'../login',
 		      data:{
@@ -21,9 +22,9 @@ window.onload=function(){
 	  {
 	     if(data=="0"){
 	    	 window.location = '../login.html';
-	     }else{
-	    	 var session_email;
-	    	 window.session_email=data;
+	     }else{ 
+	    	 session_email=data;	    	 
+	    	 sessionStorage.setItem("session_email",session_email);
 	     }
 	  }
 }

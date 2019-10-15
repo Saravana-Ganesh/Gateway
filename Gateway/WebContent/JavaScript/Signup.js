@@ -83,6 +83,7 @@ $(document).ready(function()
 		  function callbackfn(data)
 		  {
 		     if(data=="1"){
+		    	 //window.location = '../HTML/Welcome.html';
 		    	 window.location = '../JSP/Welcome.jsp';
 		     }else{
 		    	 $("#errorPhoneNumber").text("User Already Exists");
