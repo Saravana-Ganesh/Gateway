@@ -44,5 +44,24 @@
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   
+  <!-- Home page -->
+  <servlet>
+  	<servlet-name>Home</servlet-name>
+  	<servlet-class>com.virtusa.ui.HomeUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Home</servlet-name>
+  	<url-pattern>/home</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- Add question in Home page -->
+  <servlet>
+  	<servlet-name>Add-Question</servlet-name>
+  	<servlet-class>com.virtusa.ui.AddQuestionUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Add-Question</servlet-name>
+  	<url-pattern>/addQuestion</url-pattern>
+  </servlet-mapping>
   
 </web-app>

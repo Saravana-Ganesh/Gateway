@@ -2,8 +2,10 @@
  * Author Saravana Ganesh V
  * Created on 13-10-2019
  */
+window.sessionStorage;
 $(document).ready(function() {
   $('#login_page').submit(function(e) {
+	debugger;
 	e.preventDefault();
     var email = $('#email').val();
     var password = $('#password').val();
@@ -52,8 +54,8 @@ $(document).ready(function() {
   function callbackfn(data)
   {
      if(data=="1"){
-    	 //window.location = 'HTML/Welcome.html';
-    	 window.location = 'JSP/Welcome.jsp';
+    	 sessionStorage.setItem("session_email",email);
+    	 window.location = 'JSP/Home.jsp';
      }else{
     	 $("#validation").text("Invalid email or password");
      }  

@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bootstrap Navbar with Social Media Icons</title>
-	<script src="../JavaScript/session.js"></script>
+	<title>Home</title>
+	<script src="../JavaScript/home.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../CSS/welcome.css">
+	<link rel="stylesheet" href="../CSS/home.css">
 	</head> 
 <body>
 	<nav class="navbar navbar-default navbar-expand-lg navbar-light">
@@ -28,31 +28,78 @@
 		<!-- Collection of nav links, forms, and other content for toggling -->
 		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 			<ul class="nav navbar-nav">
-				<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="#"  class="nav-link">Home</a></li>
 				<li class="nav-item"><a href="#" class="nav-link">Answer</a></li>			
 				<li class="nav-item"><a href="#" class="nav-link">Notifications</a></li>
 				<!-- <li class="nav-item active"><a href="#" class="nav-link">Add Question</a></li> -->
-				<li class="nav-item"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Question</button>
-				</li>
-			  <!-- Modal -->
-				<div class="modal fade" id="myModal" role="dialog">
+				<!-- Button trigger modal -->
+				<button id="addQuestion" class="btn btn-danger  btn-lg" data-toggle="modal" data-target="#modalHorizontal">
+					Add Question
+				</button>
+<!-- Modal starts-->
+				<div class="modal fade" id="modalHorizontal" tabindex="-1" role="dialog" 
+					 aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
-					  <!-- Modal content-->
 						<div class="modal-content">
+							<!-- Modal Header -->
 							<div class="modal-header">
-							  <button type="button" class="close" data-dismiss="modal">&times;</button>
-							  <h4 class="modal-title">Modal Header</h4>
+								<button type="button" class="close" 
+								   data-dismiss="modal">
+									   <span aria-hidden="true">&times;</span>
+									   <span class="sr-only">Close</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+								   Add Question
+								</h4>
 							</div>
-							<div class="modal-body">
-							  <p>Some text in the modal.</p>
+							
+							<!-- Modal Body -->
+							<div class="modal-body">                
+								<form class="form-horizontal" role="form">                                              
+										<h4 class="mb-3">Tips on getting good answers quickly</h2>
+										<ul style="list-style-type:none;">
+											<li>
+												<div>
+													<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
+												</div>
+												<div class="add-question-box-font-awesome">Make sure your question hasn't been asked already</div>
+											</li>
+											<li>
+											<div>
+												<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
+											</div>
+												<div class="add-question-box-font-awesome">Keep your question short and to the point</div>
+											</li>
+											<li>
+												<div>
+													<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
+												</div>
+												<div class="add-question-box-font-awesome">Double-check grammar and spelling</div>
+											</li>
+										</ul>   
+										 <div class="form-group">
+											<label for="questiontextarea" class="bmd-label-floating" ></label>
+											<b><textarea id="questiontextarea" class="form-control "  rows="3"
+											 placeholder="Ask me anything........"></textarea></b>
+										</div>
+								</form>
 							</div>
+							
+							<!-- Modal Footer -->
 							<div class="modal-footer">
-							  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-default"
+										data-dismiss="modal">
+											Cancel
+								</button>
+								<button type="button" class="btn btn-primary" id="submitQuestion">
+									Add Question
+								</button>
 							</div>
-						</div>					  
+						</div>
 					</div>
 				</div>
-				<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+<!-- Modal Ends-->
+				<li class="nav-item"><a href="#" class="nav-link" id="user-name"></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right ml-auto">
 				<li class="navbar-form-wrapper">
@@ -68,12 +115,8 @@
 				<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-google-plus"></i></a></li>
 				<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-pinterest-p"></i></a></li>
 			</ul>			
-		</div>
+		</div>		
 	</nav>
 </body>
-<<<<<<< HEAD
- <script src="../JavaScript/welcome.js"></script>
+<script src="../JavaScript/addQuestion.js"></script>
 </html>                                                        
-=======
-</html>                                                        
->>>>>>> 61d296626254adb103c4889a5a6c37bc3a38d20e

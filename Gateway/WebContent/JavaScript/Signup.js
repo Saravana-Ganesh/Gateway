@@ -18,7 +18,7 @@ $(document).ready(function()
 		var phoneCheck=new RegExp('[0-9]{10}');
 		
 		//Validating Name Field
-		if((formatNumber.test(username)) || (formatSymbol.test(username)) ){
+		if((formatNumber.test(username)) || (formatSymbol.test(username))){
 			$('#error_username').text("Name should not contains numbers or symbols");
 			error = true;
 		}else{
@@ -83,8 +83,8 @@ $(document).ready(function()
 		  function callbackfn(data)
 		  {
 		     if(data=="1"){
-		    	 //window.location = '../HTML/Welcome.html';
-		    	 window.location = '../JSP/Welcome.jsp';
+		    	 sessionStorage.setItem("session_email",email);
+		    	 window.location = '../JSP/Home.jsp';
 		     }else{
 		    	 $("#errorPhoneNumber").text("User Already Exists");
 		     }  
