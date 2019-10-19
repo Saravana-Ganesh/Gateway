@@ -1,13 +1,30 @@
 /**
  * Author: Saravana Ganesh
  * Created on 17-10-2019
- */
-$('#submitQuestion').click(function(){	
-	submitQuestion();
-	
+*/
+$("#questiontextarea").keyup(function() {
+    if (!this.value) {
+    	$("#submitQuestion").attr("disabled", true);
+    }else{
+    	$("#submitQuestion").attr("disabled", false);
+    }
 });
 
+
+$('#submitQuestion').click(function(){	
+	submitQuestion();
+});
+
+$('#addQuestion').click(function(){
+	$("#questiontextarea").val("");
+	$("#submitQuestion").attr("disabled", true);
+})
+
 function submitQuestion(){
+	var close_modal=$(function(){
+			//For closing the pop-up modal
+		   $('#modalHorizontal').modal('toggle');
+	});
 	var question = $('#questiontextarea').val();
 	var email = sessionStorage.getItem("session_email");
 	if(question!="" && question!=null && typeof question != "undefined"){
@@ -27,10 +44,8 @@ function submitQuestion(){
 	      }
 
 	   });
-	}else{
-		alert("Invalid question");
 	}
 }
 function responseData(data){
-	alert("response data");
+	//alert(data);
 }

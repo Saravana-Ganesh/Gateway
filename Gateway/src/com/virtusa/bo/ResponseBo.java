@@ -1,11 +1,15 @@
 package com.virtusa.bo;
 
+import java.util.List;
+
 public class ResponseBo {
 
 	private String sessionEmail;
-	private String sessionName;
+	private String sessionName;	
+	private String recordName;
 	private String status;
-
+	private List<ViewQuestionBo> questionData;
+	
 	public String getSessionEmail() {
 		return sessionEmail;
 	}
@@ -28,5 +32,21 @@ public class ResponseBo {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRecordName() {
+		return recordName;
+	}
+
+	public void setRecordName(String recordName) {
+		this.recordName = recordName;
+	}
+
+	public List<ViewQuestionBo> getQuestionData() {
+		return questionData;
+	}
+
+	public void setQuestionData(List<ViewQuestionBo> questionData) {
+		this.questionData = questionData;
 	}
 }

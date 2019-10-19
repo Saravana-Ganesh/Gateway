@@ -14,8 +14,8 @@ public class TableConstants {
 	 public static final String PASSWORD      ="PASSWORD";
 	 
 	 //Table Constants Question_Table
-	 public static final String QUESTION_SPOT  		="Question_Spot"; //Table name 
-	 public static final String QUSESTION_SPOT_EMAIL="Email";
+	 public static final String QUESTION_MASTER  		="QUESTION_MASTER"; //Table name 
+	 public static final String QUESTION_MASTER_EMAIL="Email";
 	 public static final String QUESTION_Id         ="QuestionId";
 	 public static final String QUESTION            ="Question";
 	 public static final String IS_DELETE			="is_delete";

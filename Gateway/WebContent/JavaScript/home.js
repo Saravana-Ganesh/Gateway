@@ -12,6 +12,7 @@ window.onload=function(){
 		}
 		else{
 			loadUserData();
+			getQuestion();
 		}
 	}	
 	function loadUserData(){
@@ -33,5 +34,24 @@ window.onload=function(){
 	}
 	function userData(data){
 		$("#user-name").html(data);;
+	}
+	
+	function getQuestion(){
+		  $.ajax({
+		      url:'../viewQuestion',
+		      data:{
+			  },
+		      type:'post',
+		      async:false,
+		      success: function (data) {
+		          drawQuestion(data)
+		      },
+		      error: function (textStatus, errorThrown) {
+		    	  drawQuestion("Error getting the data")
+		      }
+		   });		
+	}
+	function drawQuestion(data){
+		alert(data);
 	}
 }

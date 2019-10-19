@@ -13,7 +13,7 @@ public class AddQuestionService {
 		ResponseBo responseBo = new ResponseBo();
 		try {			
 			AddQuestionDao addQuestionDao = new AddQuestionDao();
-			addQuestionDao.addQuestion(addQuestionBo);
+			responseBo = addQuestionDao.addQuestion(addQuestionBo);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

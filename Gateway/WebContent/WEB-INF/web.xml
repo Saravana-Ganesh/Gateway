@@ -64,4 +64,13 @@
   	<url-pattern>/addQuestion</url-pattern>
   </servlet-mapping>
   
+  <!-- View Question in Home page -->
+  <servlet>
+  	<servlet-name>ViewQuestion</servlet-name>
+  	<servlet-class>com.virtusa.ui.ViewQuestionUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewQuestion</servlet-name>
+  	<url-pattern>/viewQuestion</url-pattern>
+  </servlet-mapping>
 </web-app>

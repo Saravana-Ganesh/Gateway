@@ -5,7 +5,6 @@
 window.sessionStorage;
 $(document).ready(function() {
   $('#login_page').submit(function(e) {
-	debugger;
 	e.preventDefault();
     var email = $('#email').val();
     var password = $('#password').val();
