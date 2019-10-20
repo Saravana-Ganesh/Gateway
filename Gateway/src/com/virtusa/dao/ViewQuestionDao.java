@@ -16,7 +16,6 @@ import com.virtusa.singleton.DatabaseConnection;
 public class ViewQuestionDao {
 	public ResponseBo viewQuestion() throws SQLException {
 		ResponseBo responseBo = new ResponseBo();	
-		ViewQuestionBo viewQuestionBo = new ViewQuestionBo();
 		List<ViewQuestionBo> questionList = new ArrayList<ViewQuestionBo>();
     	Gson gson = new Gson();
 		DatabaseConnection db = null;
@@ -26,10 +25,10 @@ public class ViewQuestionDao {
 			preparedStatement = db.con.prepareStatement(QueryConstants.TIMELINE_QUESTIONS);
 			ResultSet rs = preparedStatement.executeQuery();
 			while(rs.next()) {
-			/*	ViewQuestionBo viewQuestionBo = new ViewQuestionBo();*/
-				viewQuestionBo.setName(rs.getString(TableConstants.NAME));
-				viewQuestionBo.setQuestionId(rs.getInt(TableConstants.QUESTION_Id));
+				ViewQuestionBo viewQuestionBo = new ViewQuestionBo();
+				viewQuestionBo.setName(rs.getString(TableConstants.NAME));				
 				viewQuestionBo.setQuestion(rs.getString(TableConstants.QUESTION));
+				viewQuestionBo.setQuestionId(rs.getInt(TableConstants.QUESTION_Id));
 				questionList.add(viewQuestionBo);
 			}
 			responseBo.setQuestionData(questionList);

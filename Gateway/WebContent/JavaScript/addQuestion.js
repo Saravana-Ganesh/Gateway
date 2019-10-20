@@ -13,6 +13,8 @@ $("#questiontextarea").keyup(function() {
 
 $('#submitQuestion').click(function(){	
 	submitQuestion();
+	$("#question_answer_container").empty();
+	getQuestion();
 });
 
 $('#addQuestion').click(function(){

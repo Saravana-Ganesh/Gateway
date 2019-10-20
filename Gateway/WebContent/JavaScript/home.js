@@ -11,11 +11,12 @@ window.onload=function(){
 			 window.location = '../login.html';
 		}
 		else{
-			loadUserData();
+			loadUserData(session_email);
 			getQuestion();
 		}
-	}	
-	function loadUserData(){
+	}
+}
+	function loadUserData(session_email){
 		  $.ajax({
 		      url:'../home',
 		      data:{
@@ -52,6 +53,26 @@ window.onload=function(){
 		   });		
 	}
 	function drawQuestion(data){
-		alert(data);
+		var question_answer = JSON.parse(data);
+		if(question_answer.questionData.length!=0){
+			for(var i=0;i<question_answer.questionData.length;i++){
+				$('#question_answer_container').append('<div class="container">'+
+					'<div class="jumbotron home_middle_content">'+
+					'<h3 id="questionContent">'+
+					question_answer.questionData[i].name+' Asked <br><b>'+question_answer.questionData[i].question+'</b>'
+					+'</h3>'+
+					'<p>Your questions and answers will be displayed here</p>'+
+					'</div>'+
+					'</div>'
+				);
+			}	
+		}else{			 
+			$('#question_answer_container').append('<div class="container">'+
+				'<div class="jumbotron home_middle_content">'+
+				'<h3 id="questionContent">No Questions still asked..</h3>'+
+				'<p>Your questions and answers will be displayed here</p>'+
+				'</div>'+
+				'</div>'
+			);
+		}		
 	}
-}
