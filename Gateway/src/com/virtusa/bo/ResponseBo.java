@@ -9,6 +9,7 @@ public class ResponseBo {
 	private String recordName;
 	private String status;
 	private List<ViewQuestionBo> questionData;
+	private List<SearchBo> searchData;
 	
 	public String getSessionEmail() {
 		return sessionEmail;
@@ -48,5 +49,12 @@ public class ResponseBo {
 
 	public void setQuestionData(List<ViewQuestionBo> questionData) {
 		this.questionData = questionData;
+	}
+	
+	public void setSearchData(List<SearchBo> searchData) {
+		this.searchData = searchData;
+	}
+	public List<SearchBo> getSearchData(){
+		return searchData;
 	}
 }

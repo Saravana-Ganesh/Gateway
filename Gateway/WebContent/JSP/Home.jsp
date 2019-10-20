@@ -123,4 +123,6 @@
 	</div>
 </body>
 <script src="../JavaScript/addQuestion.js"></script>
+<script src="../JavaScript/questionSearch.js"></script>
+<script src="../JavaScript/utils.js"></script>
 </html>                                                        

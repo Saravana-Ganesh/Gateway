@@ -33,8 +33,8 @@ public class ViewQuestionDao {
 			}
 			responseBo.setQuestionData(questionList);
 			responseBo.setStatus("1");
-			String json = gson.toJson(responseBo);
-			System.out.println(json);
+			/*String json = gson.toJson(responseBo);
+			System.out.println(json);*/
 						
 		}catch(Exception e) {
 			e.printStackTrace();

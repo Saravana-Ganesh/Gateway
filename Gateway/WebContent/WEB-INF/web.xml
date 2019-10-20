@@ -73,4 +73,13 @@
   	<servlet-name>ViewQuestion</servlet-name>
   	<url-pattern>/viewQuestion</url-pattern>
   </servlet-mapping>
+  <!-- For Search Operation -->
+  <servlet>
+  	<servlet-name>Search</servlet-name>
+  	<servlet-class>com.virtusa.ui.SearchUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Search</servlet-name>
+  	<url-pattern>/search</url-pattern>
+  </servlet-mapping>
 </web-app>
