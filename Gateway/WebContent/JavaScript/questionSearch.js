@@ -40,21 +40,24 @@ function drawSearchResponse(data){
 		var search_answer = data;
 		if(search_answer.searchData.length!=0){
 			for(var i=0;i<search_answer.searchData.length;i++){
+				if(search_answer.searchData[i].email==sessionStorage.session_email){
+					search_answer.searchData[i].name = "You";
+				}
 				$('#question_answer_container').append('<div class="container">'+
-					'<div class="jumbotron home_middle_content">'+
-					'<h3 id="questionContent">'+
-					search_answer.searchData[i].name+' Asked <br><b>'+search_answer.searchData[i].question+'</b>'
-					+'</h3>'+
-					'<p>Your questions and answers will be displayed here</p>'+
-					'</div>'+
-					'</div>'
-				);
+						'<div class="jumbotron home_middle_content">'+
+						'<h4 id="questionContent">'+
+						search_answer.searchData[i].name+
+						' Asked </h4><div class="question"><h4><b>'+
+						search_answer.searchData[i].question+'</b></h4></div>'+					
+						'</div>'+
+						'</div>'
+				);				
 			}	
 		}else{			 
 			$('#question_answer_container').append('<div class="container">'+
 				'<div class="jumbotron home_middle_content">'+
-				'<h3 id="questionContent">No results found</h3>'+
-				'<p>Your questions and answers will be displayed here</p>'+
+				'<h4 id="questionContent">No results found</h4>'+
+				'<p></p>'+
 				'</div>'+
 				'</div>'
 			);

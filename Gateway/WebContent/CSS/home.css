@@ -26,13 +26,21 @@
     resize: none; /*remove the resize handle on the bottom right*/
 }
 /* Modal CSS ends */
+.question{
+	margin-left:-11%;
+}
+#questionContent{
+	margin-left:-11%;
+	margin-top:-8%;
+}
 body{
 	background-color:#efefef !important;
 }
 .home_middle_content{
-	margin-right:20% !important;
-	margin-left:19%  !important;
-	background-color: #f4e8e8;
+	margin-right:24% !important;
+	margin-left:23%  !important;
+	/* background-color: #f4e8e8; */
+	background-color:#ffffff;
 }
 .btn-info {
 	color: #fffafa;

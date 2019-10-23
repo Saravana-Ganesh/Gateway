@@ -56,20 +56,37 @@ window.onload=function(){
 		var question_answer = JSON.parse(data);
 		if(question_answer.questionData.length!=0){
 			for(var i=0;i<question_answer.questionData.length;i++){
+				if(question_answer.questionData[i].email==sessionStorage.session_email){
+					question_answer.questionData[i].name = "You";
 				$('#question_answer_container').append('<div class="container">'+
 					'<div class="jumbotron home_middle_content">'+
-					'<h3 id="questionContent">'+
-					question_answer.questionData[i].name+' Asked <br><b>'+question_answer.questionData[i].question+'</b>'
-					+'</h3>'+
-					'<p>Your questions and answers will be displayed here</p>'+
+					'<h4 id="questionContent">'+
+					question_answer.questionData[i].name+
+					" Asked <i class='fa fa-trash questiondeleteIcon' " +
+					"data-id="+question_answer.questionData[i].questionId+" "+
+					"aria-hidden='true'></i></h4>"+
+					"<div class='question'><h4><b>"+
+					question_answer.questionData[i].question+'</b></h4></div>'+					
 					'</div>'+
 					'</div>'
 				);
+			}else{
+				$('#question_answer_container').append('<div class="container">'+
+						'<div class="jumbotron home_middle_content">'+
+						'<h4 id="questionContent">'+
+						question_answer.questionData[i].name+
+						" Asked </h4>"+
+						"<div class='question'><h4><b>"+
+						question_answer.questionData[i].question+'</b></h4></div>'+					
+						'</div>'+
+						'</div>'
+				);
+			}
 			}	
 		}else{			 
 			$('#question_answer_container').append('<div class="container">'+
 				'<div class="jumbotron home_middle_content">'+
-				'<h3 id="questionContent">No Questions still asked..</h3>'+
+				'<h4 id="questionContent">No Questions still asked..</h4>'+
 				'<p>Your questions and answers will be displayed here</p>'+
 				'</div>'+
 				'</div>'

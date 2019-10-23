@@ -26,7 +26,8 @@ public class ViewQuestionDao {
 			ResultSet rs = preparedStatement.executeQuery();
 			while(rs.next()) {
 				ViewQuestionBo viewQuestionBo = new ViewQuestionBo();
-				viewQuestionBo.setName(rs.getString(TableConstants.NAME));				
+				viewQuestionBo.setName(rs.getString(TableConstants.NAME));
+				viewQuestionBo.setEmail(rs.getString(TableConstants.EMAIL));
 				viewQuestionBo.setQuestion(rs.getString(TableConstants.QUESTION));
 				viewQuestionBo.setQuestionId(rs.getInt(TableConstants.QUESTION_Id));
 				questionList.add(viewQuestionBo);

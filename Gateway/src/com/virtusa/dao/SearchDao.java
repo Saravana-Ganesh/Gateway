@@ -35,7 +35,8 @@ public class SearchDao {
 				searchBo = new SearchBo();
 				searchBo.setName(rs.getString(TableConstants.NAME));
 				searchBo.setEmail(rs.getString(TableConstants.EMAIL));
-				searchBo.setQuestion(rs.getString(TableConstants.QUESTION));		
+				searchBo.setQuestion(rs.getString(TableConstants.QUESTION));	
+				searchBo.setQuestionId(rs.getInt(TableConstants.QUESTION_Id));	
 				searchDataList.add(searchBo);
 				//System.out.println(rs.getString(TableConstants.QUESTION));
 			}
