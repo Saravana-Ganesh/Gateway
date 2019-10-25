@@ -12,12 +12,15 @@ $("#questiontextarea").keyup(function() {
 
 
 $('#submitQuestion').click(function(){	
+	debugger;
 	submitQuestion();
 	$("#question_answer_container").empty();
 	getQuestion();
 });
 
 $('#addQuestion').click(function(){
+	$('#myModalLabel').text('Add Question');
+	$('#submitQuestion').text('Add Question');
 	$("#questiontextarea").val("");
 	$("#submitQuestion").attr("disabled", true);
 })

@@ -64,9 +64,12 @@ window.onload=function(){
 					question_answer.questionData[i].name+
 					" Asked <i class='fa fa-trash questiondeleteIcon' " +
 					"data-id="+question_answer.questionData[i].questionId+" "+
-					"aria-hidden='true'></i></h4>"+
-					"<div class='question'><h4><b>"+
-					question_answer.questionData[i].question+'</b></h4></div>'+					
+					"aria-hidden='true'></i></h4><div><h4>"+
+					"<i class='fa fa-pencil-square-o questionEditIcon question'" +
+					" aria-hidden='true'"+
+					"data-id='"+question_answer.questionData[i].questionId+"'>"+
+					"<b>"+
+					question_answer.questionData[i].question+'</b></h4></i>'+					
 					'</div>'+
 					'</div>'
 				);

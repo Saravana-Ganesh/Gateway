@@ -82,4 +82,13 @@
   	<servlet-name>Search</servlet-name>
   	<url-pattern>/search</url-pattern>
   </servlet-mapping>
+  <!-- For Edit or delete the question -->
+   <servlet>
+  	<servlet-name>EditOrDelete</servlet-name>
+  	<servlet-class>com.virtusa.ui.EditOrDeleteUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EditOrDelete</servlet-name>
+  	<url-pattern>/editOrDelete</url-pattern>
+  </servlet-mapping>
 </web-app>

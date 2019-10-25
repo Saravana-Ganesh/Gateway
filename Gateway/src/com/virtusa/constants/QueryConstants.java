@@ -6,7 +6,7 @@ public class QueryConstants {
 	 * people who asked that question from  Question_Master table
 	 */
 	public static final String TIMELINE_QUESTIONS="SELECT UP.NAME,UP.EMAIL,QUESTION,QUESTIONID FROM USERPROFILE UP INNER JOIN QUESTION_MASTER QM\r\n" + 
-			"ON UP.EMAIL = QM.EMAIL\r\n" + 
+			"ON UP.EMAIL = QM.EMAIL\r\n WHERE QM.IS_DELETE=0" + 
 			"ORDER BY QUESTIONID DESC"; 
 	
 	/*
@@ -17,5 +17,14 @@ public class QueryConstants {
 			"			ON UP.EMAIL = QM.EMAIL\r\n" + 
 			"            where \r\n" + 
 			"		    upper(QUESTION) like upper(?)";
-
+	/*
+	 * Below query is used for delete the qusetion
+	 */
+	public static final String DELETE_QUESTION = "UPDATE "+TableConstants.QUESTION_MASTER+" "
+			+" SET "+TableConstants.IS_DELETE+"=? WHERE "+TableConstants.QUESTION_Id+"=?";
+	/*
+	 * Below query is used for edit the qusetion
+	 */
+	public static final String EDIT_QUESTION =  "UPDATE "+TableConstants.QUESTION_MASTER+" "
+			+" SET "+TableConstants.QUESTION+"=? WHERE "+TableConstants.QUESTION_Id+"=?";
 }
