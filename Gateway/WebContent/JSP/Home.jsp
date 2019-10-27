@@ -93,7 +93,7 @@
 										data-dismiss="modal">
 											Cancel
 								</button>
-								<button type="button" class="btn btn-primary" id="submitQuestion">
+								<button type="button" class="btn btn-primary" class = "updateQuestion" id="submitQuestion">
 									Add Question
 								</button>
 							</div>

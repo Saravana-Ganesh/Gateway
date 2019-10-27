@@ -3,7 +3,8 @@
  * Date:23-10-2019
  * Purpose:For deleting the question which asked already.
  */
-
+window.operation; 
+ window.questionId;
 //JQuery click event for dynamically loaded contents
 $('#question_answer_container').on('click','.questiondeleteIcon',function(){ 
 	var questionId = $(this).attr("data-id");
@@ -13,10 +14,6 @@ $('#question_answer_container').on('click','.questiondeleteIcon',function(){
 	getQuestion();
 });
 function deleteOrEditQuestion(questionId,operation){
-	var close_modal=$(function(){
-		//For closing the pop-up modal
-	   $('#modalHorizontal').modal('toggle');
-	});
 	if(operation=="delete"){
 		$.ajax({
 		      url:'../editOrDelete',
@@ -35,7 +32,11 @@ function deleteOrEditQuestion(questionId,operation){
 		      }
 
 		   });
-	}else if(operation=="edit"){		
+	}else if(operation=="edit"){	
+		var close_modal=$(function(){
+			//For closing the pop-up modal
+		   $('#modalHorizontal').modal('toggle');
+		});
 		var question = $('#questiontextarea').val();
 		if(question!="" && question!=null && typeof question != "undefined"){
 			 $.ajax({
@@ -61,24 +62,12 @@ function deleteOrEditQuestion(questionId,operation){
 	
 }
 
-$('#question_answer_container').on('click', '.questionEditIcon', function(e) {	
-		$('#submitQuestion').attr('id','updateQuestion');
+$('#question_answer_container').on('click', '.questionEditIcon', function(e) {			
 		$('#myModalLabel').text('Edit Question');
 		$('#modalHorizontal').modal('show');
-		$('#updateQuestion').text('Update');
-		$("#questiontextarea").val($(this).text());
-		//$("#updateQuestion").attr("disabled", true);		
-		var operation  = "edit";
-		var questionId = $(this).attr("data-id");
-		$('#updateQuestion').click(function(){
-			debugger;
-			var close_modal=$(function(){
-				//For closing the pop-up modal
-			   $('#modalHorizontal').modal('toggle');
-			});
-			deleteOrEditQuestion(questionId,operation);	
-			$("#question_answer_container").empty();
-			getQuestion();
-		});			
-		
- });
+		$('#submitQuestion').text('Update');
+		$("#questiontextarea").val($(this).text());	
+		$("#submitQuestion").attr("disabled", false);
+		operation  = "edit";
+		questionId = $(this).attr("data-id");			
+});

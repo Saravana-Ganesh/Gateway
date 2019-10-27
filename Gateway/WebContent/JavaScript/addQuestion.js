@@ -11,9 +11,13 @@ $("#questiontextarea").keyup(function() {
 });
 
 
-$('#submitQuestion').click(function(){	
-	debugger;
-	submitQuestion();
+$('#submitQuestion').click(function(){
+	if($("#submitQuestion").text()=='Add Question'){
+		submitQuestion();
+	}else if($('#submitQuestion').text()=='Update'){
+		debugger;
+		deleteOrEditQuestion(questionId,operation);
+	}	
 	$("#question_answer_container").empty();
 	getQuestion();
 });

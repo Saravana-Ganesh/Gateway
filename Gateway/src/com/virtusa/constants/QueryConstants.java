@@ -16,7 +16,8 @@ public class QueryConstants {
 			"			INNER JOIN QUESTION_MASTER QM\r\n" + 
 			"			ON UP.EMAIL = QM.EMAIL\r\n" + 
 			"            where \r\n" + 
-			"		    upper(QUESTION) like upper(?)";
+			"		    upper(QUESTION) like upper(?)"
+			+ "         and QM.is_delete=0";
 	/*
 	 * Below query is used for delete the qusetion
 	 */
