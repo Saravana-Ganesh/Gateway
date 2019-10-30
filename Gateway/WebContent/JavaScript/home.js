@@ -68,8 +68,8 @@ window.onload=function(){
 					"<i class='fa fa-pencil-square-o questionEditIcon question'" +
 					" aria-hidden='true'"+
 					"data-id='"+question_answer.questionData[i].questionId+"'>"+
-					"<b>"+
-					question_answer.questionData[i].question+'</b></h4></i>'+					
+					"<b> <a href='https://www.w3schools.com'>"+
+					question_answer.questionData[i].question+'</a></b></h4></i>'+					
 					'</div>'+
 					'</div>'
 				);
@@ -78,9 +78,12 @@ window.onload=function(){
 						'<div class="jumbotron home_middle_content">'+
 						'<h4 id="questionContent">'+
 						question_answer.questionData[i].name+
-						" Asked </h4>"+
-						"<div class='question'><h4><b>"+
-						question_answer.questionData[i].question+'</b></h4></div>'+					
+						' Asked <a href="#" class="btn btn-primary a-btn-slide-text answer_button">'+
+				        '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'+
+				        '<span><strong>Answer</strong></span> </a></h4>'+
+						"<div class='question'><h4><b><a href='https://www.w3schools.com'>"+
+						question_answer.questionData[i].question+'</a></b></h4>'+
+						'</div>'+					   				
 						'</div>'+
 						'</div>'
 				);
