@@ -91,4 +91,13 @@
   	<servlet-name>EditOrDelete</servlet-name>
   	<url-pattern>/editOrDelete</url-pattern>
   </servlet-mapping>
+  <!-- For Post answer -->
+   <servlet>
+  	<servlet-name>AddAnswer</servlet-name>
+  	<servlet-class>com.virtusa.ui.AddAnswerUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddAnswer</servlet-name>
+  	<url-pattern>/addAnswer</url-pattern>
+  </servlet-mapping>
 </web-app>

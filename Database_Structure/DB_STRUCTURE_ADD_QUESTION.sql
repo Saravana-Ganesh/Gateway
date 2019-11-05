@@ -18,3 +18,15 @@ BEGIN
 	update QUESTION_MASTER set QUESTIONID=(select count(*) from QUESTION_MASTER) where QUESTIONID=0;
 commit;
 END;
+
+/*
+Table Structure for Storing Answer in database
+*/
+CREATE TABLE ANSWER_MASTER(
+	Email varchar(25)  REFERENCES UserProfile (Email),
+	QuestionId int REFERENCES QUESTION_MASTER(QuestionId),
+	Answer VARCHAR(4000),
+	is_delete int default 0,
+  constraint ANSWER_MASTER_UNIQUE UNIQUE (Email,QuestionId)
+);
+

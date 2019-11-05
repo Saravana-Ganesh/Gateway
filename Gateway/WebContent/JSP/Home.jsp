@@ -57,33 +57,14 @@
 							
 							<!-- Modal Body -->
 							<div class="modal-body">                
-								<form class="form-horizontal" role="form">                                              
-										<h4 class="mb-3">Tips on getting good answers quickly</h2>
-										<ul style="list-style-type:none;">
-											<li>
-												<div>
-													<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
-												</div>
-												<div class="add-question-box-font-awesome">Make sure your question hasn't been asked already</div>
-											</li>
-											<li>
-											<div>
-												<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
-											</div>
-												<div class="add-question-box-font-awesome">Keep your question short and to the point</div>
-											</li>
-											<li>
-												<div>
-													<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>
-												</div>
-												<div class="add-question-box-font-awesome">Double-check grammar and spelling</div>
-											</li>
-										</ul>   
+								<form class="form-horizontal" role="form">
+									<div class="question_tips">                                              																
+									</div> 
 										 <div class="form-group">
 											<label for="questiontextarea" class="bmd-label-floating" ></label>
 											<b><textarea id="questiontextarea" class="form-control "  rows="3"
 											 placeholder="Ask me anything........"></textarea></b>
-										</div>
+										</div>									
 								</form>
 							</div>
 							
@@ -126,4 +107,5 @@
 <script src="../JavaScript/questionSearch.js"></script>
 <script src="../JavaScript/utils.js"></script>
 <script src="../JavaScript/deleteQuestion.js"></script>
+<script src="../JavaScript/addAnswer.js"></script>
 </html>                                                        

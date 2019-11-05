@@ -15,20 +15,52 @@ $('#submitQuestion').click(function(){
 	if($("#submitQuestion").text()=='Add Question'){
 		submitQuestion();
 	}else if($('#submitQuestion').text()=='Update'){
-		debugger;
 		deleteOrEditQuestion(questionId,operation);
+	}else if($("#submitQuestion").text()=='Add Answer'){
+		answer = $("#questiontextarea").val();
+		submitanswer(answer);
+	}else if($("#submitQuestion").text()=='Update Answer'){
+		answer = $("#questiontextarea").val();
+		updateAnswer(answer);
 	}	
 	$("#question_answer_container").empty();
 	getQuestion();
 });
 
-$('#addQuestion').click(function(){
+$('#addQuestion').click(function(){	
+	questionTips();
 	$('#myModalLabel').text('Add Question');
 	$('#submitQuestion').text('Add Question');
 	$("#questiontextarea").val("");
-	$("#submitQuestion").attr("disabled", true);
+	$("#questiontextarea").attr("placeholder", "Ask me anything........");
+	//$("#submitQuestion").attr("disabled", true);
 })
-
+function questionTips(){
+	$(".question_tips").empty();
+	$('.question_tips').append('<h4 class="mb-3">Tips on '+
+			'getting good answers quickly</h4>'+
+			'<ul style="list-style-type:none;">'+
+			'<li>'+
+				'<div>'+
+				'<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>'+
+			'</div>'+
+			'<div class="add-question-box-font-awesome">Make sure your question'+
+				'hasn\'t been asked already</div>'+
+				'</li>'+
+			'<li>'+
+			'<div>'+
+				'<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>'+
+			'</div>'+
+			'<div class="add-question-box-font-awesome">Keep your question short and to the point</div>'+
+			'</li>'+
+			'<li>'+
+			'<div>'+
+			'<i class="fa fa-hand-o-right fa-2x" aria-hidden="true"></i>'+
+			'</div>'+
+			'<div class="add-question-box-font-awesome">Double-check grammar and spelling</div>'+
+			'</li>'+
+			'</ul>');
+}
 function submitQuestion(){
 	var close_modal=$(function(){
 			//For closing the pop-up modal

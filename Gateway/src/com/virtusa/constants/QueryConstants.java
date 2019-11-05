@@ -19,13 +19,24 @@ public class QueryConstants {
 			"		    upper(QUESTION) like upper(?)"
 			+ "         and QM.is_delete=0";
 	/*
-	 * Below query is used for delete the qusetion
+	 * Below query is used for delete the question
 	 */
 	public static final String DELETE_QUESTION = "UPDATE "+TableConstants.QUESTION_MASTER+" "
 			+" SET "+TableConstants.IS_DELETE+"=? WHERE "+TableConstants.QUESTION_Id+"=?";
 	/*
-	 * Below query is used for edit the qusetion
+	 * Below query is used for edit the question
 	 */
 	public static final String EDIT_QUESTION =  "UPDATE "+TableConstants.QUESTION_MASTER+" "
 			+" SET "+TableConstants.QUESTION+"=? WHERE "+TableConstants.QUESTION_Id+"=?";
+	/*
+	 * Below query is used for insert the Answer
+	 */
+	public static final String INSERT_ANSWER = "INSERT INTO "+TableConstants.ANSWER_MASTER+"("+TableConstants.ANSWER_MASTER_EMAIL+","
+			+TableConstants.ANSWER_MASTER_QUESTION_Id+","+TableConstants.ANSWER+")VALUES(?,?,?)";
+	
+	/*
+	 * The below query is used for check answer already exists
+	 */
+	public static final String CHECK_ANSWER ="SELECT "+TableConstants.ANSWER+" FROM "+TableConstants.ANSWER_MASTER
+			+" WHERE "+TableConstants.ANSWER_MASTER_EMAIL+"=? AND "+TableConstants.ANSWER_MASTER_QUESTION_Id+"=?";
 }

@@ -47,12 +47,12 @@ body{
     background-color: #eb5844;
     border-color: #f3f3f3;
 }
-a.answer_button:hover {
+.answer_button:hover {
      -webkit-transform: scale(1.1);
      -moz-transform: scale(1.1);
      -o-transform: scale(1.1);
  }
- a.answer_button {
+ .answer_button {
      -webkit-transform: scale(0.8);
      -moz-transform: scale(0.8);
      -o-transform: scale(0.8);

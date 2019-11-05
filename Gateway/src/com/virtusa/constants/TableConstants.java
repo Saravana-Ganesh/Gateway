@@ -15,9 +15,17 @@ public class TableConstants {
 	 
 	 //Table Constants Question_Table
 	 public static final String QUESTION_MASTER  		="QUESTION_MASTER"; //Table name 
-	 public static final String QUESTION_MASTER_EMAIL="Email";
-	 public static final String QUESTION_Id         ="QuestionId";
-	 public static final String QUESTION            ="Question";
-	 public static final String IS_DELETE			="is_delete";
+	 public static final String QUESTION_MASTER_EMAIL   ="Email";
+	 public static final String QUESTION_Id             ="QuestionId";
+	 public static final String QUESTION                ="Question";
+	 public static final String IS_DELETE			    ="is_delete";
+	 
+	//Table Constants ANSWER_MASTER
+	 public static final String ANSWER_MASTER  		       ="ANSWER_MASTER"; //Table name 
+	 public static final String ANSWER_MASTER_EMAIL        ="Email";
+	 public static final String ANSWER_MASTER_QUESTION_Id  ="QuestionId";
+	 public static final String ANSWER                     ="Answer";
+	 public static final String ANS_IS_DELETE		       ="is_delete";
+	 
 	 
 }

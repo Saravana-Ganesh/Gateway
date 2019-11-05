@@ -4,7 +4,8 @@
  * Purpose:For deleting the question which asked already.
  */
 window.operation; 
- window.questionId;
+window.questiontextarea
+window.questionId;;
 //JQuery click event for dynamically loaded contents
 $('#question_answer_container').on('click','.questiondeleteIcon',function(){ 
 	var questionId = $(this).attr("data-id");
@@ -62,12 +63,13 @@ function deleteOrEditQuestion(questionId,operation){
 	
 }
 
-$('#question_answer_container').on('click', '.questionEditIcon', function(e) {			
+$('#question_answer_container').on('click', '.questionEditIcon', function(e) {	
+		questionTips();
 		$('#myModalLabel').text('Edit Question');
 		$('#modalHorizontal').modal('show');
 		$('#submitQuestion').text('Update');
 		$("#questiontextarea").val($(this).text());	
-		$("#submitQuestion").attr("disabled", false);
+		$("#questiontextarea").attr("placeholder", "Edit your question..");
 		operation  = "edit";
 		questionId = $(this).attr("data-id");			
 });
