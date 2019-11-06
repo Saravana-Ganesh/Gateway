@@ -11,16 +11,21 @@ import com.virtusa.constants.TableConstants;
 import com.virtusa.singleton.DatabaseConnection;
 
 public class AddAnswerDao {
-	public ResponseBo addAnswer(AddanswerBo addanswerBo) throws SQLException {
+	public ResponseBo addOrUpdateAnswer(AddanswerBo addanswerBo) throws SQLException {
 		ResponseBo responseBo = new ResponseBo();
+		PreparedStatement preparedStatement = null;
 		DatabaseConnection db = null;
 		try {
 			int count=0;
 			db = DatabaseConnection.getDbConnection();
-			PreparedStatement preparedStatement = db.con.prepareStatement(QueryConstants.INSERT_ANSWER);
-			preparedStatement.setString(1,addanswerBo.getEmail());
+			if(addanswerBo.getType().equalsIgnoreCase("add")) {
+				preparedStatement = db.con.prepareStatement(QueryConstants.INSERT_ANSWER);	
+			}else if(addanswerBo.getType().equalsIgnoreCase("update")) {
+				preparedStatement = db.con.prepareStatement(QueryConstants.UPDATE_ANSWER);	
+			}
+			preparedStatement.setString(1,addanswerBo.getAnswer());
 			preparedStatement.setInt(2,addanswerBo.getQuestionId());
-			preparedStatement.setString(3,addanswerBo.getAnswer());
+			preparedStatement.setString(3,addanswerBo.getEmail());			
 			count = preparedStatement.executeUpdate();
 			if(count!=0) {
 				responseBo.setStatus("1");
@@ -64,5 +69,4 @@ public class AddAnswerDao {
 		
 	
 	}
-
 }

@@ -7,11 +7,11 @@ import com.virtusa.bo.ResponseBo;
 import com.virtusa.dao.AddAnswerDao;
 
 public class AddAnswerService {
-	public ResponseBo addAnswer(AddanswerBo addanswerBo) {
+	public ResponseBo addOrUpdateAnswer(AddanswerBo addanswerBo) {
 		ResponseBo responseBo = new ResponseBo();
 		AddAnswerDao addAnswerDao = new AddAnswerDao();
 		try {
-			responseBo = addAnswerDao.addAnswer(addanswerBo);
+			responseBo = addAnswerDao.addOrUpdateAnswer(addanswerBo);		
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}

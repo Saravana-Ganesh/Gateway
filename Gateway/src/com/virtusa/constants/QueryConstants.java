@@ -31,12 +31,18 @@ public class QueryConstants {
 	/*
 	 * Below query is used for insert the Answer
 	 */
-	public static final String INSERT_ANSWER = "INSERT INTO "+TableConstants.ANSWER_MASTER+"("+TableConstants.ANSWER_MASTER_EMAIL+","
-			+TableConstants.ANSWER_MASTER_QUESTION_Id+","+TableConstants.ANSWER+")VALUES(?,?,?)";
+	public static final String INSERT_ANSWER = "INSERT INTO "+TableConstants.ANSWER_MASTER+"("+TableConstants.ANSWER+","
+			+TableConstants.ANSWER_MASTER_QUESTION_Id+","+TableConstants.ANSWER_MASTER_EMAIL+")VALUES(?,?,?)";
 	
 	/*
 	 * The below query is used for check answer already exists
 	 */
 	public static final String CHECK_ANSWER ="SELECT "+TableConstants.ANSWER+" FROM "+TableConstants.ANSWER_MASTER
 			+" WHERE "+TableConstants.ANSWER_MASTER_EMAIL+"=? AND "+TableConstants.ANSWER_MASTER_QUESTION_Id+"=?";
+	
+	/*
+	 * The below query is for updating the answer
+	 */
+	public static final String UPDATE_ANSWER = "UPDATE "+TableConstants.ANSWER_MASTER+" SET "+TableConstants.ANSWER+"=? "
+			+ " WHERE "+TableConstants.ANSWER_MASTER_QUESTION_Id+"=? AND "+TableConstants.ANSWER_MASTER_EMAIL+"=?";
 }

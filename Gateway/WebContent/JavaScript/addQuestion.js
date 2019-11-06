@@ -18,7 +18,7 @@ $('#submitQuestion').click(function(){
 		deleteOrEditQuestion(questionId,operation);
 	}else if($("#submitQuestion").text()=='Add Answer'){
 		answer = $("#questiontextarea").val();
-		submitanswer(answer);
+		addAnswer(answer);
 	}else if($("#submitQuestion").text()=='Update Answer'){
 		answer = $("#questiontextarea").val();
 		updateAnswer(answer);

@@ -49,18 +49,15 @@ function checkAnswerExistsResponse(data){
 		editAnswer="";
 	}
 }
-function submitanswer(answer){
-	var close_modal=$(function(){
-		//For closing the pop-up modal
-	   $('#modalHorizontal').modal('toggle');
-	});
+function addOrUpdateAnswer(answer,purpose){
+	closeModal();
 	$.ajax({
 	      url:'../addAnswer',
 	      data:{
 	    	  "questionId":questionId,
 	    	  "answer":answer,
 	    	  "session_email":sessionStorage.session_email,
-	    	  "purpose":"AddAnswer"
+	    	  "purpose":purpose
 		  },
 	      type:'post',
 	      async:false,
@@ -73,9 +70,12 @@ function submitanswer(answer){
 
 	   });
 }
-function submitAnswerResponse(data){
-	
+function addAnswer(answer){
+	addOrUpdateAnswer(answer,"Add")
 }
 function updateAnswer(answer){
-	alert(answer);
+	addOrUpdateAnswer(answer,"Update")
+}
+function submitAnswerResponse(data){
+	
 }

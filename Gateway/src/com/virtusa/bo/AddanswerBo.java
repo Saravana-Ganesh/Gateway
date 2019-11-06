@@ -4,6 +4,7 @@ public class AddanswerBo {
 	private int questionId;
 	private String answer;
 	private String email;
+	private String type;
 	
 	public int getQuestionId() {
 		return questionId;
@@ -22,6 +23,12 @@ public class AddanswerBo {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

@@ -101,3 +101,9 @@ window.onload=function(){
 			);
 		}		
 	}
+	function closeModal(){
+		var close_modal=$(function(){
+			//For closing the pop-up modal
+		   $('#modalHorizontal').modal('toggle');
+		});
+	}

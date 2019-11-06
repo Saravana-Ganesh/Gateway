@@ -19,8 +19,8 @@ public class AddAnswerUi extends HttpServlet {
 		if(request.getParameter("purpose").equals("checkAnswerExists")) {
 			responseBo = checkAnswerExists(request,response);
 		}else {
-			responseBo = addAnswer(request,response);
-		}		
+			responseBo = addOrUpdateAnswer(request,response);
+		}
 		//Setting response	
 		String jsonResponse = gson.toJson(responseBo);
 	    response.setContentType("text/plain");
@@ -41,7 +41,7 @@ public class AddAnswerUi extends HttpServlet {
 		}		
 		return responseBo;
 	}
-	private ResponseBo addAnswer(HttpServletRequest request,HttpServletResponse response) {
+	private ResponseBo addOrUpdateAnswer(HttpServletRequest request,HttpServletResponse response) {
 		ResponseBo responseBo = new ResponseBo();
 		AddanswerBo addanswerBo = new AddanswerBo();
 		AddAnswerService addAnswerService = new AddAnswerService();
@@ -49,11 +49,13 @@ public class AddAnswerUi extends HttpServlet {
 		String questionId = request.getParameter("questionId");
 		String answer = request.getParameter("answer");
 		String email = request.getParameter("session_email");
-		if(!StringUtils.isNullOrEmpty(questionId)&&!StringUtils.isNullOrEmpty(answer)) {
+		String type  = request.getParameter("purpose");
+		if(!StringUtils.isNullOrEmpty(questionId)&&!StringUtils.isNullOrEmpty(answer)&&!StringUtils.isNullOrEmpty(questionId)) {
 			addanswerBo.setAnswer(answer);
 			addanswerBo.setQuestionId(Integer.parseInt(questionId));
 			addanswerBo.setEmail(email);
-			responseBo = addAnswerService.addAnswer(addanswerBo);
+			addanswerBo.setType(type);
+			responseBo = addAnswerService.addOrUpdateAnswer(addanswerBo);
 		}
 		return responseBo;
 	}
