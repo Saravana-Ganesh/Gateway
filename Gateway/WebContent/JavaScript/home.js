@@ -68,7 +68,7 @@ window.onload=function(){
 					"<i class='fa fa-pencil-square-o questionEditIcon question'" +
 					" aria-hidden='true'"+
 					"data-id='"+question_answer.questionData[i].questionId+"'>"+
-					"<b> <a href='https://www.w3schools.com'>"+
+					"<b> <a class='answer' data-id='"+question_answer.questionData[i].questionId+"'>"+
 					question_answer.questionData[i].question+'</a></b></h4></i>'+					
 					'</div>'+
 					'</div>'
@@ -83,7 +83,7 @@ window.onload=function(){
 						'data-id="'+question_answer.questionData[i].questionId+'">'+
 				        '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'+
 				        '<span><strong>Answer</strong></span> </button></h4>'+
-						"<div class='question'><h4><b><a href='https://www.w3schools.com'>"+
+						"<div class='question'><h4><b><a class='answer' data-id='"+question_answer.questionData[i].questionId+"'>"+
 						question_answer.questionData[i].question+'</a></b></h4>'+
 						'</div>'+					   				
 						'</div>'+

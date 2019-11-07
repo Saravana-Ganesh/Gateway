@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home</title>
-		<script src="../JavaScript/home.js"></script>
+		<!-- <script src="../JavaScript/home.js"></script> -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Raleway" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,6 +15,7 @@
 		
 		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 		<link rel="stylesheet" href="../CSS/home.css">
+		<script src="../JavaScript/home.js"></script>
 	</head> 
 <body>
 	<nav class="navbar navbar-default navbar-expand-lg navbar-light">
@@ -108,4 +109,5 @@
 <script src="../JavaScript/utils.js"></script>
 <script src="../JavaScript/deleteQuestion.js"></script>
 <script src="../JavaScript/addAnswer.js"></script>
+<script src="../JavaScript/answer.js"></script>
 </html>                                                        
