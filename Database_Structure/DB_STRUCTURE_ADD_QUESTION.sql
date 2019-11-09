@@ -31,4 +31,11 @@ CREATE TABLE ANSWER_MASTER(
     constraint ANSWER_MASTER_UNIQUE UNIQUE (Email,QuestionId),
     constraint ANSWER_MASTER_PK PRIMARY KEY(AnswerId)
 );
+--PROCEDURE FOR IDENTITY INSERT 
+create or replace PROCEDURE Identity_ANSWER_MASTER
+IS
+BEGIN
+	update ANSWER_MASTER set AnswerId=(select count(*) from ANSWER_MASTER) where AnswerId=0;
+commit;
+END;
 
