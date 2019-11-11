@@ -1,11 +1,13 @@
 package com.virtusa.dao;
 
+import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.virtusa.bo.AddanswerBo;
 import com.virtusa.bo.ResponseBo;
+import com.virtusa.constants.PlSqlConstants;
 import com.virtusa.constants.QueryConstants;
 import com.virtusa.constants.TableConstants;
 import com.virtusa.singleton.DatabaseConnection;
@@ -28,6 +30,10 @@ public class AddAnswerDao {
 			preparedStatement.setString(3,addanswerBo.getEmail());			
 			count = preparedStatement.executeUpdate();
 			if(count!=0) {
+				if(addanswerBo.getType().equalsIgnoreCase("add")) {
+					CallableStatement callableStatement = db.con.prepareCall ("begin "+PlSqlConstants.IDENTITY_INSERT_ANSWER_MASTER+";end;");
+					callableStatement.execute ();
+				}
 				responseBo.setStatus("1");
 			}else {
 				responseBo.setStatus("0");

@@ -24,6 +24,7 @@ public class TableConstants {
 	 public static final String ANSWER_MASTER  		       ="ANSWER_MASTER"; //Table name 
 	 public static final String ANSWER_MASTER_EMAIL        ="Email";
 	 public static final String ANSWER_MASTER_QUESTION_Id  ="QuestionId";
+	 public static final String ANSWER_MASTER_ANSWER_Id    ="answerid";
 	 public static final String ANSWER                     ="Answer";
 	 public static final String ANS_IS_DELETE		       ="is_delete";
 	 

@@ -10,6 +10,7 @@ public class ResponseBo {
 	private String status;
 	private List<ViewQuestionBo> questionData;
 	private List<SearchBo> searchData;
+	private List<AnswerBo> AnswerData;
 	private String answer;
 	
 	public String getSessionEmail() {
@@ -65,5 +66,13 @@ public class ResponseBo {
 
 	public void setAnswer(String answer) {
 		this.answer = answer;
+	}
+
+	public List<AnswerBo> getAnswerData() {
+		return AnswerData;
+	}
+
+	public void setAnswerData(List<AnswerBo> answerData) {
+		AnswerData = answerData;
 	}
 }

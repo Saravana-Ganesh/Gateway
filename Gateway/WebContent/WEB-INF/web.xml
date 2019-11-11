@@ -100,4 +100,13 @@
   	<servlet-name>AddAnswer</servlet-name>
   	<url-pattern>/addAnswer</url-pattern>
   </servlet-mapping>
+  <!-- To view Answer -->
+  <servlet>
+	  <servlet-name>ShowAnswer</servlet-name>
+	  <servlet-class>com.virtusa.ui.AnswerUi</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>ShowAnswer</servlet-name>
+	  <url-pattern>/answer</url-pattern>
+  </servlet-mapping>
 </web-app>

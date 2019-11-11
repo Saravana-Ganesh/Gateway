@@ -45,4 +45,13 @@ public class QueryConstants {
 	 */
 	public static final String UPDATE_ANSWER = "UPDATE "+TableConstants.ANSWER_MASTER+" SET "+TableConstants.ANSWER+"=? "
 			+ " WHERE "+TableConstants.ANSWER_MASTER_QUESTION_Id+"=? AND "+TableConstants.ANSWER_MASTER_EMAIL+"=?";
+	/*
+	 * View Answer
+	 */
+	public static final String VIEW_ANSWER = "select "
+			+ " TO_CHAR(TO_DATE(createddate,'DD-MON-YY', 'NLS_DATE_LANGUAGE = English'),\r\n" + 
+			"           'DD/MM/YYYY') as createddate,"
+			+ " UP.name,AM.email,am.questionid,am.answerid,answer from question_master QM inner join Answer_master AM \r\n" + 
+			"on qm.questionid = am.questionid  inner join userprofile UP on Am.email = up.email\r\n" + 
+			"where qm.is_delete =0 and am.is_delete=0 and am.questionid=?";
 }
