@@ -5,9 +5,14 @@ public class QueryConstants {
 	 * The below query is to retrieve the questions and corresponding
 	 * people who asked that question from  Question_Master table
 	 */
-	public static final String TIMELINE_QUESTIONS="SELECT UP.NAME,UP.EMAIL,QUESTION,QUESTIONID FROM USERPROFILE UP INNER JOIN QUESTION_MASTER QM\r\n" + 
-			"ON UP.EMAIL = QM.EMAIL\r\n WHERE QM.IS_DELETE=0" + 
-			"ORDER BY QUESTIONID DESC"; 
+	public static final String TIMELINE_QUESTIONS="SELECT UP.NAME,UP.EMAIL,QUESTION,QM.QUESTIONID,NVL(count(AM.questionId),0) as ANSWER_COUNT\r\n" + 
+			"FROM USERPROFILE UP INNER JOIN QUESTION_MASTER QM\r\n" + 
+			"ON UP.EMAIL = QM.EMAIL\r\n" + 
+			"left outer join answer_master AM \r\n" + 
+			"on QM.questionid = AM.questionid\r\n" + 
+			"WHERE QM.IS_DELETE=0\r\n" + 
+			"group by QM.QUESTIONID,UP.NAME,UP.EMAIL,QUESTION\r\n" + 
+			"ORDER BY QM.QUESTIONID DESC"; 
 	
 	/*
 	 * The below query is used for retrieve the search result data
@@ -49,8 +54,6 @@ public class QueryConstants {
 	 * View Answer
 	 */
 	public static final String VIEW_ANSWER = "select "
-			+ " TO_CHAR(TO_DATE(createddate,'DD-MON-YY', 'NLS_DATE_LANGUAGE = English'),\r\n" + 
-			"           'DD/MM/YYYY') as createddate,"
 			+ " UP.name,AM.email,am.questionid,am.answerid,answer from question_master QM inner join Answer_master AM \r\n" + 
 			"on qm.questionid = am.questionid  inner join userprofile UP on Am.email = up.email\r\n" + 
 			"where qm.is_delete =0 and am.is_delete=0 and am.questionid=?";

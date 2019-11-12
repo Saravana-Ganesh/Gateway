@@ -5,6 +5,7 @@ public class ViewQuestionBo {
 	private String name;
 	private String question;
 	private int questionId;
+	private int answer_count;
 	
 	public String getEmail() {
 		return email;
@@ -29,6 +30,12 @@ public class ViewQuestionBo {
 	}
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
+	}
+	public int getAnswer_count() {
+		return answer_count;
+	}
+	public void setAnswer_count(int answer_count) {
+		this.answer_count = answer_count;
 	}
 
 }

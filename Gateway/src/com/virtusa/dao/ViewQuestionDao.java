@@ -30,6 +30,7 @@ public class ViewQuestionDao {
 				viewQuestionBo.setEmail(rs.getString(TableConstants.EMAIL));
 				viewQuestionBo.setQuestion(rs.getString(TableConstants.QUESTION));
 				viewQuestionBo.setQuestionId(rs.getInt(TableConstants.QUESTION_Id));
+				viewQuestionBo.setAnswer_count(rs.getInt("ANSWER_COUNT"));
 				questionList.add(viewQuestionBo);
 			}
 			responseBo.setQuestionData(questionList);

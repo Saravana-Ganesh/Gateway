@@ -54,8 +54,18 @@ window.onload=function(){
 	}
 	function drawQuestion(data){
 		var question_answer = JSON.parse(data);
+		var answer_count;
 		if(question_answer.questionData.length!=0){
 			for(var i=0;i<question_answer.questionData.length;i++){
+				if(question_answer.questionData[i].answer_count==0){
+					answer_count = "No Answers yet..";
+				}
+				else if(question_answer.questionData[i].answer_count==1){
+					answer_count = "1 Answer";
+				}
+				else if(question_answer.questionData[i].answer_count>1){
+					answer_count = question_answer.questionData[i].answer_count+" Answers";
+				}
 				if(question_answer.questionData[i].email==sessionStorage.session_email){
 					question_answer.questionData[i].name = "You";
 				$('#question_answer_container').append('<div class="container">'+
@@ -82,7 +92,7 @@ window.onload=function(){
 						'data-toggle="modal" data-target="#modalHorizontal"'+' '+
 						'data-id="'+question_answer.questionData[i].questionId+'">'+
 				        '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'+
-				        '<span><strong>Answer</strong></span> </button></h4>'+
+				        '<span><strong>Answer</strong></span> </button></h4><br>'+answer_count+''+
 						"<div class='question'><h4><b><a class='answer' data-id='"+question_answer.questionData[i].questionId+"'>"+
 						question_answer.questionData[i].question+'</a></b></h4>'+
 						'</div>'+					   				

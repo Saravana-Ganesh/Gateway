@@ -27,7 +27,6 @@ public class AnswerDao {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while(resultSet.next()) {
 				AnswerBo answerBO = new AnswerBo();
-				answerBO.setDate(resultSet.getString(TableConstants.CREATED_DATE));
 				answerBO.setName(resultSet.getString(TableConstants.NAME));
 				answerBO.setEmail(resultSet.getString(TableConstants.ANSWER_MASTER_EMAIL));
 				answerBO.setQuestionId(resultSet.getString(TableConstants.ANSWER_MASTER_QUESTION_Id));
