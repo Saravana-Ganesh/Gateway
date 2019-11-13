@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
 import com.virtusa.bo.ResponseBo;
 import com.virtusa.bo.SearchBo;
 import com.virtusa.constants.QueryConstants;

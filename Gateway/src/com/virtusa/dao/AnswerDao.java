@@ -30,6 +30,7 @@ public class AnswerDao {
 				answerBO.setName(resultSet.getString(TableConstants.NAME));
 				answerBO.setEmail(resultSet.getString(TableConstants.ANSWER_MASTER_EMAIL));
 				answerBO.setQuestionId(resultSet.getString(TableConstants.ANSWER_MASTER_QUESTION_Id));
+				//answerBO.setQuestion(resultSet.getString(TableConstants.QUESTION));
 				answerBO.setAnswerId(resultSet.getString(TableConstants.ANSWER_MASTER_ANSWER_Id));
 				answerBO.setAnswer(resultSet.getString(TableConstants.ANSWER));
 				AnswerDataList.add(answerBO);

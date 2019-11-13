@@ -6,7 +6,7 @@ public class AnswerBo {
 	private String name;
 	private String email;
 	private String answer;
-	private String date;
+	private String question;
 	
 	public String getEmail() {
 		return email;
@@ -48,12 +48,11 @@ public class AnswerBo {
 		AnswerId = answerMasterAnswerId;
 	}
 
-	public String getDate() {
-		return date;
+	public String getQuestion() {
+		return question;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setQuestion(String question) {
+		this.question = question;
 	}
-
 }

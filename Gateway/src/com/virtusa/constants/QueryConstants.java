@@ -53,8 +53,9 @@ public class QueryConstants {
 	/*
 	 * View Answer
 	 */
-	public static final String VIEW_ANSWER = "select "
-			+ " UP.name,AM.email,am.questionid,am.answerid,answer from question_master QM inner join Answer_master AM \r\n" + 
-			"on qm.questionid = am.questionid  inner join userprofile UP on Am.email = up.email\r\n" + 
-			"where qm.is_delete =0 and am.is_delete=0 and am.questionid=?";
+	public static final String VIEW_ANSWER = "select \r\n" + 
+		"			 UP.name,AM.email,AM.questionid,QM.question,AM.answerid,AM.answer from question_master QM inner join Answer_master AM \r\n" + 
+		"		     on QM.questionid = QM.questionid  inner join userprofile UP on Am.email = up.email and\r\n" + 
+	    "    	     AM.questionid = QM.questionid\r\n" + 
+		"			 where qm.is_delete =0 and am.is_delete=0  and am.questionid=?";
 }

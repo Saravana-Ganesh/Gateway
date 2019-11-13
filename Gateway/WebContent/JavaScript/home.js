@@ -58,7 +58,7 @@ window.onload=function(){
 		if(question_answer.questionData.length!=0){
 			for(var i=0;i<question_answer.questionData.length;i++){
 				if(question_answer.questionData[i].answer_count==0){
-					answer_count = "No Answers yet..";
+					answer_count = "No Answer yet..";
 				}
 				else if(question_answer.questionData[i].answer_count==1){
 					answer_count = "1 Answer";
@@ -74,7 +74,7 @@ window.onload=function(){
 					question_answer.questionData[i].name+
 					" Asked <i class='fa fa-trash questiondeleteIcon' " +
 					"data-id="+question_answer.questionData[i].questionId+" "+
-					"aria-hidden='true'></i></h4><div><h4>"+
+					"aria-hidden='true'></i></h4><div class='question'>"+answer_count+"</div><div><h4>"+
 					"<i class='fa fa-pencil-square-o questionEditIcon question'" +
 					" aria-hidden='true'"+
 					"data-id='"+question_answer.questionData[i].questionId+"'>"+
@@ -92,7 +92,7 @@ window.onload=function(){
 						'data-toggle="modal" data-target="#modalHorizontal"'+' '+
 						'data-id="'+question_answer.questionData[i].questionId+'">'+
 				        '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'+
-				        '<span><strong>Answer</strong></span> </button></h4><br>'+answer_count+''+
+				        '<span><strong>Answer</strong></span> </button></h4><div class="question">'+answer_count+'</div>'+
 						"<div class='question'><h4><b><a class='answer' data-id='"+question_answer.questionData[i].questionId+"'>"+
 						question_answer.questionData[i].question+'</a></b></h4>'+
 						'</div>'+					   				
