@@ -8,7 +8,7 @@
   
   <servlet>
     <servlet-name>HelloWorldServlet</servlet-name>
-    <servlet-class>com.virtusa.GetUserServlet</servlet-class>
+    <servlet-class>com.gateway.GetUserServlet</servlet-class>
   </servlet>
    <servlet-mapping>
     <servlet-name>HelloWorldServlet</servlet-name>
@@ -17,7 +17,7 @@
   
    <servlet>
     <servlet-name>SecondServlet</servlet-name>
-    <servlet-class>com.virtusa.SecondServlet</servlet-class>
+    <servlet-class>com.gateway.SecondServlet</servlet-class>
   </servlet>
    <servlet-mapping>
     <servlet-name>SecondServlet</servlet-name>
@@ -27,7 +27,7 @@
   <!-- For Signup operation -->
   <servlet>
     <servlet-name>Signup</servlet-name>
-    <servlet-class>com.virtusa.ui.SignupUi</servlet-class>
+    <servlet-class>com.gateway.ui.SignupUi</servlet-class>
   </servlet>
    <servlet-mapping>
     <servlet-name>Signup</servlet-name>
@@ -37,7 +37,7 @@
   <!-- For login operation -->
   <servlet>
   	<servlet-name>Login</servlet-name>
-  	<servlet-class>com.virtusa.ui.LoginUi</servlet-class>
+  	<servlet-class>com.gateway.ui.LoginUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Login</servlet-name>
@@ -47,7 +47,7 @@
   <!-- Home page -->
   <servlet>
   	<servlet-name>Home</servlet-name>
-  	<servlet-class>com.virtusa.ui.HomeUi</servlet-class>
+  	<servlet-class>com.gateway.ui.HomeUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Home</servlet-name>
@@ -57,7 +57,7 @@
   <!-- Add question in Home page -->
   <servlet>
   	<servlet-name>Add-Question</servlet-name>
-  	<servlet-class>com.virtusa.ui.AddQuestionUi</servlet-class>
+  	<servlet-class>com.gateway.ui.AddQuestionUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Add-Question</servlet-name>
@@ -67,7 +67,7 @@
   <!-- View Question in Home page -->
   <servlet>
   	<servlet-name>ViewQuestion</servlet-name>
-  	<servlet-class>com.virtusa.ui.ViewQuestionUi</servlet-class>
+  	<servlet-class>com.gateway.ui.ViewQuestionUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>ViewQuestion</servlet-name>
@@ -76,7 +76,7 @@
   <!-- For Search Operation -->
   <servlet>
   	<servlet-name>Search</servlet-name>
-  	<servlet-class>com.virtusa.ui.SearchUi</servlet-class>
+  	<servlet-class>com.gateway.ui.SearchUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Search</servlet-name>
@@ -85,7 +85,7 @@
   <!-- For Edit or delete the question -->
    <servlet>
   	<servlet-name>EditOrDelete</servlet-name>
-  	<servlet-class>com.virtusa.ui.EditOrDeleteUi</servlet-class>
+  	<servlet-class>com.gateway.ui.EditOrDeleteUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>EditOrDelete</servlet-name>
@@ -94,7 +94,7 @@
   <!-- For Post answer -->
    <servlet>
   	<servlet-name>AddAnswer</servlet-name>
-  	<servlet-class>com.virtusa.ui.AddAnswerUi</servlet-class>
+  	<servlet-class>com.gateway.ui.AddAnswerUi</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>AddAnswer</servlet-name>
@@ -103,7 +103,7 @@
   <!-- To view Answer -->
   <servlet>
 	  <servlet-name>ShowAnswer</servlet-name>
-	  <servlet-class>com.virtusa.ui.AnswerUi</servlet-class>
+	  <servlet-class>com.gateway.ui.AnswerUi</servlet-class>
   </servlet>
   <servlet-mapping>
 	  <servlet-name>ShowAnswer</servlet-name>
