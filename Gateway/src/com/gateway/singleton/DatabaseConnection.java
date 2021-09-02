@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import com.gateway.constants.DBConstants;  
 
 public class DatabaseConnection {
-	public  Connection con = null;
-	public static  DatabaseConnection db = null;
+	private  Connection con = null;
+	private static  DatabaseConnection db = null;
 	private DatabaseConnection(){	
 		/*
 		 * author Saravana Ganesh
